@@ -34,7 +34,7 @@ router.get("/findByName/:theName", async (req, res) => {
     return res.send(restaurantFound);
   } catch (e) {
     console.log("No");
-    return res.status(500).send(e);
+    return res.status(500).send({ message: "Error fetching restaurant." });
   }
 });
 
@@ -55,7 +55,7 @@ router.get("/:_id", async (req, res) => {
     return res.send(restaurantFound);
   } catch (e) {
     console.log(e);
-    return res.status(500).send(e);
+    return res.status(500).send({ message: "Error fetching restaurant." });
   }
 });
 
@@ -75,9 +75,7 @@ router.get("/:restaurantId/comments", async (req, res) => {
     res.status(200).json(restaurant.comment);
   } catch (error) {
     console.error("Error fetching comments:", error.message);
-    res
-      .status(500)
-      .json({ error: "Internal Server Error", details: error.message });
+    res.status(500).json({ message: "Internal Server Error" });
   }
 });
 
@@ -168,7 +166,7 @@ router.get("/gallery/random-restaurants", async (req, res) => {
     ]);
     res.json(randomRestaurants);
   } catch (err) {
-    res.status(500).json({ error: "Failed to fetch random restaurants" });
+    res.status(500).json({ message: "Failed to fetch random restaurants" });
   }
 });
 
@@ -203,7 +201,7 @@ router.get("/favrestaurant/:userID", async (req, res) => {
     res.status(200).json(userFavRestaurants);
   } catch (err) {
     console.error("Error fetching favorite restaurants:", err.message);
-    res.status(500).json({ error: "Failed to fetch favorite restaurants" });
+    res.status(500).json({ message: "Failed to fetch favorite restaurants" });
   }
 });
 module.exports = router;
