@@ -17,6 +17,8 @@
     "joi": "^17.13.3",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.11.0",
+    "netlify-cli": "^19.0.3",
+    "netlify-lambda": "^2.0.16",
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1",
     "serverless-http": "^3.2.0"
