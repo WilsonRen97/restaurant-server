@@ -15,3 +15,5 @@ Key Features are:
 ## Installation
 
 Accessing the MongoDB will require the key. You won't get it, so don't install the project.
+
+(Note for myself: use "npm run build" command to deploy to netlify)
